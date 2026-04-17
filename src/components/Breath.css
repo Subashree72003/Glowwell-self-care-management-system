@@ -1,0 +1,213 @@
+/* src/components/Breath.css */
+
+:root {
+  --card-bg: #ffffff;
+  --muted: #6b5166;
+  --accent1: #cc8db3;
+  --accent2: #f6a5c0;
+  --page-bg: linear-gradient(135deg, #8b76d1, #f6a5c0, #f7c2ca);
+}
+
+/* PAGE */
+.breathPage {
+  min-height: 100vh;
+  padding: 36px 40px;
+  background: var(--page-bg);
+  color: #2b1028;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+/* HEADER */
+.breathHeader {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.breathHeader h1 {
+  font-size: 34px;
+  font-weight: 900;
+  margin-bottom: 4px;
+  color: white;
+}
+
+.breathIntroSmall {
+  color: #ffeef7;
+  font-size: 16px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  max-width: 1100px;
+  margin: 24px auto;
+  box-shadow: 0 12px 26px rgba(0,0,0,0.1);
+}
+
+/* center & circle */
+.centerCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.circleWrap {
+  width: 330px;
+  height: 330px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* circle base */
+.breathCircle {
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffd4e9, #ffbada);
+  box-shadow: 0 10px 34px rgba(150, 70, 110, 0.22), inset 0 6px 18px rgba(255,255,255,0.35);
+  transform: scale(1);
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* if video is used, style the video element */
+.breathCircle video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  transform: translateZ(0);
+}
+
+/* subtle ripple glow */
+.breathCircle::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 80px rgba(255,150,200,0.06);
+  pointer-events: none;
+}
+
+/* overlay */
+.circleOverlay {
+  position: absolute;
+  text-align: center;
+  pointer-events: none;
+}
+
+.phaseLabel {
+  font-size: 20px;
+  font-weight: 800;
+  color: #5e2b55;
+}
+
+.phaseCountdown {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 8px;
+  color: #7e2a63;
+}
+
+.sessionStats {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* controls */
+.controlsRow {
+  margin-top: 14px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: linear-gradient(90deg, #f6a5c0, #df83af);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #2b1028;
+  box-shadow: 0 8px 28px rgba(223,131,175,0.12);
+}
+.primaryBtn:hover { transform: translateY(-4px); }
+.primaryBtn.stop { background: #f3c1d7; }
+
+/* pattern select */
+.patternSelect {
+  display: flex;
+  gap: 10px;
+  font-weight: 700;
+  align-items:center;
+}
+.patternSelect select {
+  padding: 8px 10px;
+  border: 1px solid #efd5e7;
+  border-radius: 10px;
+  background: white;
+}
+
+/* info cards */
+.breathPatternsCard {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+.breathSectionTitle {
+  font-size: 26px;
+  font-weight: 900;
+  text-align: center;
+  color: #a74385;
+  margin-bottom: 20px;
+}
+.patternGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 20px;
+}
+.patternBox {
+  background: #fff7fb;
+  padding: 18px 24px;
+  border-radius: 16px;
+  border-left: 6px solid #f6a5c0;
+}
+
+/* techniques */
+.breathTechniquesCard { background: white; padding: 35px; border-radius: 20px; margin: 25px auto; max-width: 1100px; }
+.techList li { padding: 16px; background: #fff4fa; border-radius: 12px; margin-bottom: 18px; border-left: 6px solid #e9a3bf; }
+.techList h3 { margin-bottom: 6px; color: #7b2d66; }
+
+/* why + affirmations */
+.breathWhyCard { background: white; padding: 30px; border-radius: 22px; max-width: 1100px; margin: 30px auto; text-align:center; }
+.breathWhyCard h2 { color: #b14e8a; margin-bottom: 12px; }
+.affirmCard p { font-weight: 600; color: #542544; }
+
+/* end card */
+.endCard { background: #ffe3f4; text-align:center; padding:20px; border-radius:12px; }
+
+/* responsive */
+@media (max-width: 880px) {
+  .circleWrap { width: 260px; height: 260px; }
+  .breathCircle { width: 180px; height: 180px; }
+  .controlsRow { gap: 8px; }
+  .patternGrid { grid-template-columns: 1fr; }
+}

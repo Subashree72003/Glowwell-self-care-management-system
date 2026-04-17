@@ -1,0 +1,294 @@
+/* ============================================================
+   MOOD.CSS  — full file with tab bar styles added at bottom
+   ============================================================ */
+
+/* ROOT PAGE */
+.moodRoot {
+  padding: 40px 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8b76d1, #f6a5c0, #f7c2ca);
+  text-align: center;
+  color: #432b43;
+}
+
+/* MAIN HEADING */
+.moodTitle {
+  font-size: 42px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* WHITE INTRO CARD */
+.introCard {
+  width: 85%;
+  max-width: 900px;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 22px;
+  margin: 0 auto 25px auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  text-align: left;
+  line-height: 1.75;
+  font-size: 18px;
+  color: #4b3850;
+}
+
+.highlightLine {
+  font-weight: 700;
+  color: #b24a86;
+  margin-top: 12px;
+}
+
+/* SMALL DESCRIPTION */
+.moodSmallDesc {
+  margin-top: 10px;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin-bottom: 25px;
+}
+
+/* MOOD GRID */
+.moodGridLarge {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 18px;
+  justify-content: center;
+  margin-bottom: 25px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* MOOD EMOJI CARDS */
+.moodCardSmall {
+  width: 100%;
+  height: 110px;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.moodCardSmall:hover {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.moodCardSmall.active {
+  outline: 4px solid white;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  transform: scale(1.1);
+}
+
+.smallEmoji {
+  font-size: 40px;
+  margin-bottom: 6px;
+}
+
+.smallLabel {
+  font-size: 13px;
+  font-weight: 700;
+  color: #503854;
+}
+
+/* HISTORY BUTTON */
+.historyBtn {
+  margin-top: 20px;
+  padding: 12px 18px;
+  background: white;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  color: #5a3f54;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
+}
+
+.historyBtn:hover {
+  transform: translateY(-4px);
+}
+
+/* SAVE BUTTON */
+.saveBtn {
+  margin-top: 15px;
+  padding: 12px 18px;
+  background: #ffffff;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  color: #5a3f54;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transition: 0.25s ease;
+}
+
+.saveBtn:hover {
+  transform: translateY(-4px);
+}
+
+/* TOP WHITE HISTORY CARD */
+.historyCardTop {
+  width: 85%;
+  max-width: 900px;
+  background: white;
+  padding: 28px;
+  border-radius: 22px;
+  margin: 25px auto 20px auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+  text-align: left;
+}
+
+/* BOTTOM WHITE HISTORY CARD (toggles) */
+.historyCardBottom {
+  width: 85%;
+  max-width: 900px;
+  background: white;
+  padding: 25px;
+  border-radius: 22px;
+  margin: 10px auto 30px auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+  text-align: left;
+}
+
+.historyIntro {
+  font-size: 17px;
+  color: #4b3550;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.historyBullet {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.historyBullet li {
+  margin-bottom: 8px;
+  color: #4a2f50;
+  font-size: 16px;
+}
+
+.historyClosing {
+  font-size: 17px;
+  color: #593552;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.historyList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.historyItem {
+  padding: 12px;
+  background: #ffd6e8;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #000;
+}
+
+.time {
+  font-size: 14px;
+  color: #373737;
+}
+
+.emptyMsg {
+  color: #6b4b63;
+  font-style: italic;
+}
+
+/* ============================================================
+   TAB BAR  — added below existing styles
+   ============================================================ */
+
+.gwTabBar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 10px 12px;
+  border-radius: 18px;
+  margin: 0 auto 28px auto;
+  max-width: 700px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
+
+.gwTabBtn {
+  flex: 1;
+  min-width: 110px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.28);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: "Poppins", sans-serif;
+  white-space: nowrap;
+}
+
+.gwTabBtn:hover {
+  background: rgba(255, 255, 255, 0.45);
+  transform: translateY(-2px);
+}
+
+.gwTabBtn.active {
+  background: white;
+  color: #6a2b63;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+/* TAB CONTENT WRAPPER */
+.tabContent {
+  width: 100%;
+  animation: tabFadeIn 0.3s ease;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .gwTabBar {
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .gwTabBtn {
+    min-width: 80px;
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+
+  .moodGridLarge {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+  }
+
+  .moodCardSmall {
+    height: 90px;
+  }
+
+  .smallEmoji {
+    font-size: 30px;
+  }
+}

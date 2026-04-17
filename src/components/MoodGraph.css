@@ -1,0 +1,75 @@
+.graphRoot {
+  padding: 20px;
+  color: #222;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  margin-bottom: 22px;
+}
+
+.mainTitle {
+  font-size: 34px;
+  font-weight: 800;
+  color: #b12f7e;
+}
+
+.subText {
+  color: #333;
+  margin-top: 8px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.toggleWrap {
+  margin-top: 14px;
+}
+
+.toggleBtn {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #eee;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toggleBtn.active {
+  background: linear-gradient(90deg, #e87fb2, #f9bdd6);
+  color: white;
+}
+
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #a9287a;
+}
+
+.smallDesc {
+  color: #444;
+  margin-top: 6px;
+}
+
+.graphBox {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff7fb;
+  border-radius: 18px;
+}
+
+.affirm {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #9b2873;
+}
+
+.footerNote {
+  text-align: center;
+  margin-top: 12px;
+  color: #777;
+}

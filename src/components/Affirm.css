@@ -1,0 +1,267 @@
+/* ============= ROOT PAGE ============= */
+.affirmRoot {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  padding: 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ============= GENERIC CARD ============= */
+.card {
+  background: rgba(255, 240, 250, 0.92);
+  padding: 25px;
+  width: 90%;
+  max-width: 700px;
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+/* ============= HEADING ============= */
+.headingGlow {
+  font-size: 32px;
+  font-weight: 900;
+  background: linear-gradient(90deg, #ff8ec6, #ffbcd9, #ffcfe8);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 8px rgba(255, 180, 220, 0.3);
+}
+
+.subGlow {
+  color: #5a3d57;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+/* ============= CATEGORY BAR ============= */
+.categoryBar {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.catBtn {
+  background: white;
+  border: 1px solid #deb4c7;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  color: #7a4c6c;
+  transition: 0.2s;
+}
+
+.catBtn.active {
+  background: linear-gradient(90deg, #ff9ac5, #ffc4dd);
+  color: #3b0d2f;
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 150, 200, 0.3);
+}
+
+/* ============= AFFIRMATION BOX ============= */
+.affirmBox {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow background */
+.affirmGlow {
+  background: white;
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(255, 150, 200, 0.35);
+  animation: softPulse 6s infinite ease-in-out;
+}
+
+@keyframes softPulse {
+  0% { box-shadow: 0 0 22px rgba(255,150,200,0.4); }
+  50% { box-shadow: 0 0 35px rgba(255,170,220,0.7); }
+  100% { box-shadow: 0 0 22px rgba(255,150,200,0.4); }
+}
+
+/* Fade text */
+.affirmTextFade {
+  font-size: 22px;
+  font-weight: 700;
+  color: #5a3d57;
+  animation: fadeText 1s ease;
+}
+
+@keyframes fadeText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============= ACTION BUTTONS ============= */
+.affirmActions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.pinkBtn {
+  background: linear-gradient(90deg, #ffb2d6, #ff8fc4);
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  color: #3b0d2f;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: 0.2s;
+}
+
+.pinkBtn:hover {
+  transform: scale(1.05);
+}
+
+/* Generate Button */
+.generateBtn {
+  margin-top: 14px;
+  background: linear-gradient(90deg, #ffa4cd, #ff7fb3);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 700;
+  width: 100%;
+}
+
+/* Auto-play */
+.autoBtn {
+  margin-top: 10px;
+  background: white;
+  padding: 10px;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #d4a9c0;
+  cursor: pointer;
+  font-weight: 700;
+  color: #5a3d57;
+}
+
+.autoBtn.active {
+  background: #ffb8d8;
+  color: #3b0d2f;
+}
+
+/* ============= FAVORITES ============= */
+.favHeading {
+  font-size: 22px;
+  font-weight: 800;
+  color: #7a3d71;
+  margin-bottom: 15px;
+}
+
+/* Search bar */
+.searchBar {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #deb4c7;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+/* Empty */
+.noFav {
+  color: #6d5568;
+  font-size: 15px;
+}
+
+/* List */
+.favList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.favItem {
+  background: white;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.favText {
+  color: #4a3547;
+  font-weight: 700;
+}
+
+.favDate {
+  color: #9d7a8d;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* ============= DELETE POPUP ============= */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupBox {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.popupActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.yesBtn {
+  background: #ff7aa2;
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.noBtn {
+  background: #ddd;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============= ANIMATIONS ============= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}

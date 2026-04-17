@@ -1,0 +1,110 @@
+/* Wheel main layout */
+.wheelModule { padding: 18px 28px; }
+
+/* Top card */
+.wheelCardTop { max-width: 1100px; margin: 0 auto 18px; background: rgba(255,240,248,0.95); padding: 26px; border-radius: 20px; box-shadow: 0 12px 40px rgba(0,0,0,0.06); }
+.wheelTitleTop { text-align: center; font-size: 28px; margin: 6px 0; font-weight:800; color: #a84a8a; background: linear-gradient(90deg,#ff9ec7,#ffd1e8); -webkit-background-clip:text; color:transparent; }
+.wheelDescTop { text-align:center; color:#6b4b5e; margin-bottom: 18px; }
+
+/* Wheel stage */
+.wheelStageWrap { display:flex; justify-content:center; align-items:center; position:relative; }
+.wheelPointer { position:absolute; top:-6px; font-size:22px; color:#a84a8a; z-index:30; }
+.wheelSvgLarge { width:460px; height:460px; transform-origin:50% 50%; transition:transform 0.25s linear; border-radius:50%; }
+.wheelSvgLarge.spinning { filter: drop-shadow(0 0 25px rgba(255,150,200,0.4)); }
+.wheelSvgLarge.stopped { filter: drop-shadow(0 0 14px rgba(255,180,220,0.45)); }
+
+/* Spin button */
+.wheelActions { display:flex; justify-content:center; margin-top:16px; }
+.wheelBtn { background: linear-gradient(90deg,#ff9ec7,#ffd1e8); border:none; padding:10px 18px; border-radius:12px; font-weight:800; cursor:pointer; color:#4a2034; box-shadow:0 8px 20px rgba(0,0,0,0.06); }
+.wheelBtn[disabled] { opacity:0.6; cursor:not-allowed; }
+
+/* Result + mode area */
+.wheelResultWrap { max-width: 920px; margin: 18px auto 40px; }
+.resultHeader { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.resultHeader h3 { margin:0; color:#7a2d56; }
+.modeButtons { display:flex; gap:8px; }
+.modeBtn { padding:8px 12px; border-radius:12px; border:1px solid rgba(0,0,0,0.06); background:#fff; cursor:pointer; font-weight:700; }
+.modeBtn.active { background: linear-gradient(90deg,#ffd1e8,#ffb2d6); box-shadow:0 8px 16px rgba(0,0,0,0.06); border:none; color:#5b2c57; }
+
+/* Card for tasks */
+.taskAreaCard { margin-top:12px; background: white; border-radius:14px; padding:18px; box-shadow:0 12px 30px rgba(0,0,0,0.06); }
+
+/* tasks list - checkbox layout style #2 (you chose) */
+.tasksListWrap h4 { margin:0 0 10px 0; color:#8b3d7c; font-weight:800; text-align:center; }
+.tasksCheckboxList { list-style:none; padding-left:0; display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+.tasksCheckboxList li { background: #fff6f9; border-radius:12px; padding:12px; border:1px solid rgba(200,140,160,0.12); }
+.checkboxLabel { display:flex; align-items:center; gap:10px; cursor:pointer; }
+.checkboxLabel input[type="checkbox"] { width:18px; height:18px; }
+.taskText { color:#4a2f40; font-weight:700; }
+
+/* reflection style */
+.reflectionBox { display:flex; flex-direction:column; gap:14px; }
+.reflectPrompt { background:#ce92a6; padding:16px; border-radius:12px; border:1px solid rgba(200,140,160,0.08); }
+.promptLabel { font-weight:800; color:#7a3a61; margin-bottom:8px; text-align:center; }
+.reflectPrompt textarea { width:100%; min-height:110px; border-radius:12px; border:1px solid rgba(200,140,160,0.12); padding:12px; resize:vertical; font-family:inherit; }
+
+/* save button pink */
+.saveBtnPink { background: linear-gradient(90deg,#d98aa6,#f6b6c9); border:none; padding:10px 14px; border-radius:14px; font-weight:800; cursor:pointer; color:#4a2034; }
+
+/* blank message */
+.blankMsg { color:#8b7a86; text-align:center; padding:18px; }
+
+/* history card - ONLY this is toggled by Show History button */
+.historyCardBottom { margin-top:14px; background: linear-gradient(180deg, #fffafc, #fff4f8); padding:18px; border-radius:16px; box-shadow:0 10px 28px rgba(0,0,0,0.06); }
+.historyCardBottom h3 { margin:0 0 8px 0; color:#8b3d7c; }
+.historySection { margin-top:12px; }
+.historyGroup { background:#fff; border-radius:10px; padding:10px; margin:10px 0; border:1px solid rgba(180,130,150,0.06); }
+.historyDate { font-weight:800; color:#7a2d56; margin-bottom:6px; }
+.historyItemRow { padding:6px 8px; border-radius:8px; background: linear-gradient(90deg,#fff6f9,#fff); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; gap:10px; }
+.timeRight { color:#6c4d5f; font-size:12px; opacity:0.9; margin-left:12px; }
+
+/* small muted text */
+.mutedSmall { color:#8d7c85; }
+
+/* history toggle btn */
+.historyToggleBtn { margin-top:12px; background: linear-gradient(90deg,#f8d9e6,#ffdfee); border:none; padding:10px 14px; border-radius:12px; font-weight:700; cursor:pointer; color:#5a2b4b; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .tasksCheckboxList { grid-template-columns: 1fr; }
+  .wheelSvgLarge { width: 340px; height:340px; }
+}
+/* HISTORY FIXES — improve text visibility */
+.historyItemRow {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #ffeaf2, #ffffff);
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #4a2f40;          /* MAIN FIX — dark text */
+  font-weight: 600;
+}
+
+/* Area name (Career, Health...) */
+.historyItemRow strong {
+  color: #7a2d56;          /* Dark rose color */
+  font-weight: 800;
+}
+
+/* Time on right side */
+.timeRight {
+  color: #6a4a55;          /* Dark grey rose */
+  font-size: 13px;
+  opacity: 1;              /* FULLY VISIBLE */
+}
+
+/* Daily/Weekly/Reflection section titles */
+.historySection h4 {
+  color: #7a2d56 !important;
+  font-weight: 800;
+}
+
+/* Date label (28-11-2025) */
+.historyDate {
+  color: #5a1f44;
+  font-weight: 900;
+  margin-bottom: 6px;
+}

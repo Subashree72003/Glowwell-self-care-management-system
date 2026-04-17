@@ -1,0 +1,381 @@
+/* ================================================================
+   JOURNAL.CSS — GlowWell Personal Journal
+   ================================================================ */
+
+.jRoot {
+  padding: 32px 24px 60px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #8b76d1, #f6a5c0, #f7c2ca);
+  font-family: "Poppins", sans-serif;
+  color: #2b1028;
+}
+
+/* TOAST */
+.jToast {
+  position: fixed;
+  bottom: 28px;
+  right: 24px;
+  background: linear-gradient(90deg, #ff9ec7, #b07dff);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  animation: toastIn 0.3s ease;
+}
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* HEADER */
+.jHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.jTitle {
+  font-size: 36px;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 4px;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.jSub {
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+  font-size: 15px;
+}
+.jHeaderStats { display: flex; gap: 10px; flex-wrap: wrap; }
+.jStatPill {
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 13px;
+  color: white;
+}
+
+/* WRITE CARD */
+.jWriteCard {
+  background: rgba(255,255,255,0.95);
+  border-radius: 24px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.jWriteTitle {
+  font-size: 20px;
+  font-weight: 900;
+  color: #5a2d55;
+  margin: 0 0 16px;
+}
+
+/* MOOD ROW */
+.jMoodRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.jMoodBtn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: #f5f0fa;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jMoodBtn:hover  { transform: scale(1.15); }
+.jMoodBtn.active { border-color: #b07dff; background: #efe0ff; box-shadow: 0 4px 12px rgba(176,125,255,0.3); transform: scale(1.1); }
+
+/* TEXTAREA */
+.jTextarea {
+  width: 100%;
+  min-height: 160px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid #e0d0ea;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.7;
+  color: #2b1028;
+  background: #fdfaff;
+  outline: none;
+  transition: 0.2s;
+}
+.jTextarea:focus {
+  border-color: #b07dff;
+  box-shadow: 0 0 0 3px rgba(176,125,255,0.15);
+}
+.jWordCount {
+  font-size: 12px;
+  color: #a090b0;
+  text-align: right;
+  margin-top: 6px;
+  margin-bottom: 14px;
+}
+
+/* CONTROLS */
+.jControls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.jSelect {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e0d0ea;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  color: #2b1028;
+  cursor: pointer;
+  outline: none;
+}
+.jPromptBtn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid #e0d0ea;
+  background: #f5f0fa;
+  color: #5a2d55;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+}
+.jPromptBtn:hover { background: #efe0ff; border-color: #b07dff; }
+.jSaveBtn {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ff9ec7, #b07dff);
+  color: white;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: inherit;
+  box-shadow: 0 4px 14px rgba(176,125,255,0.35);
+  margin-left: auto;
+}
+.jSaveBtn:hover    { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(176,125,255,0.5); }
+.jSaveBtn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+/* ENTRIES SECTION */
+.jEntriesSection { max-width: 900px; margin: 0 auto; }
+.jEntriesHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.jEntriesTitle {
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  margin: 0;
+}
+.jEntriesControls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.jSearch {
+  padding: 9px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.9);
+  font-size: 14px;
+  min-width: 180px;
+  font-family: inherit;
+  color: #2b1028;
+  outline: none;
+}
+
+/* LOADING */
+.jLoading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px;
+  color: white;
+}
+.jSpinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* EMPTY STATE */
+.jEmpty {
+  text-align: center;
+  padding: 50px 20px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+}
+.jEmptyIcon { font-size: 56px; margin-bottom: 12px; }
+.jEmpty h3  { color: #5a2d55; margin: 0 0 8px; }
+.jEmpty p   { color: #8b6b85; }
+
+/* ENTRIES LIST */
+.jEntriesList { display: flex; flex-direction: column; gap: 14px; }
+
+/* ENTRY CARD */
+.jEntryCard {
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  animation: entryIn 0.3s ease;
+  transition: transform 0.2s;
+}
+.jEntryCard:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.15); }
+@keyframes entryIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.jEntryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+.jEntryMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.jEntryMood { font-size: 26px; }
+.jCatBadge {
+  background: linear-gradient(90deg, #ffe0f0, #f0d8ff);
+  color: #7a2d66;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.jEntryDate { font-size: 12px; color: #a090b0; }
+.jEntryActions { display: flex; gap: 8px; }
+.jEditBtn {
+  background: #f0f0f0;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  color: #5a2d55;
+  transition: 0.2s;
+  font-family: inherit;
+}
+.jEditBtn:hover { background: #efe0ff; }
+.jDeleteBtn {
+  background: #ffe0e0;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.jDeleteBtn:hover { background: #ffc0c0; }
+
+.jEntryText {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #3b1f3a;
+  white-space: pre-wrap;
+  margin: 0 0 14px;
+}
+.jEntryFooter { display: flex; align-items: center; gap: 10px; }
+.jWordBadge {
+  font-size: 12px;
+  color: #a090b0;
+  background: #f5f0fa;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* EDIT MODAL */
+.jEditOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+.jEditModal {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  max-width: 600px;
+  width: 94%;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+}
+.jEditHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.jEditHeader h3 { margin: 0; color: #5a2d55; font-size: 18px; }
+.jModalClose {
+  background: #f5f0fa;
+  border: none;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #5a2d55;
+}
+.jEditActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .jRoot { padding: 20px 14px 50px; }
+  .jTitle { font-size: 26px; }
+  .jWriteCard { padding: 18px; }
+  .jEntriesHeader { flex-direction: column; align-items: flex-start; }
+  .jControls { flex-direction: column; align-items: stretch; }
+  .jSaveBtn { margin-left: 0; }
+  .jSearch { min-width: 100%; }
+}
